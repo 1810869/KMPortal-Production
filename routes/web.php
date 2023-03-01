@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SolariumController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -15,15 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('base');
-});
+// Route::get('/', function () {
+//     return view('base');
+// });
+
+// Route::get('/search', function () {
+//     return view('search');
+// });
 
 Route::get('/search', function () {
-    return view('search');
-});
-
-Route::get('/search2', function () {
     return view('search2');
 });
 
@@ -31,8 +32,22 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('send.email');
+// Route::get('result', function (){
+//     return view('result2');
+// });
 
+// Route::get('dump', function(){
+//     return view('datadump');
+// });
+
+Route::get('/ping', [SolariumController::class, 'ping']);
+// Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('send.email');
+// Route::post('/result', [SolariumController::class, 'search']);
+//Fallback
+Route::fallback(function(){
+
+    return view('search2');
+});
 
 
 

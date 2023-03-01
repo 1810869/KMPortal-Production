@@ -84,10 +84,13 @@
                 <p style="color: white;">databases and repositories available at IIUM</p>
             </div>
         </div>
+      <form method="post" action="{{url('result')}}">
+          {{csrf_field()}}
         <div id="searchBarWrap">
-            <input id="searchBar" type="text" name="searchbar" placeholder="Enter a keyword to get started"/>
-            <a href="/result2"><button class="btn" id="searchBtn" style="height: 40px;"><i class="fa fa-search"></i></button></a>
+            <input id="searchBar" type="text" name="keyword" placeholder="Enter a keyword to get started"/>
+            <button type="submit" class="btn" id="searchBtn" style="height: 40px;"><i class="fa fa-search"></i></button>
         </div>
+      </form>
 
     </div>
 
@@ -99,152 +102,11 @@
             <a href="#cluster" class="cluster-img"><img src="/images/down.png" alt="down arrow" class="vert-move"></a>
        </div>
 
+       {{-- <marquee width="100%" direction="right" height="30px" style="background-color:yellow; color:red; z-index:-3; "> 
+        This website is still under development, it does not represent the final product.
+        </marquee> --}}
+
        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
-
-       {{-- <section class="container py-5 text-center" id="cluster">
-          
-        <row class="row justify-content-center">
-          <column class="col-12 col-lg-3 d-flex">
-            <card class="card shadow my-4 pt-3 align-self-stretch">
-              <div class="icon-cluster">
-                <img src="/images/IIUM Policies & Standard - Round Shape.png" alt="" style="width: 5rem; height: 5rem; ">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><strong>IIUM Rules and Policiess</strong> </h5>
-                <p class="card-text">
-                  Explore IIUM policies & standards.
-                </p>
-              </div>
-            </card>
-          </column>
-          <column class="col-12 col-lg-3 d-flex">
-            <card class="card shadow my-4 pt-3 align-self-stretch">
-              <div class="icon-cluster">
-                <img src="/images/Expert Corner - Round Shape.png" alt="" style="width: 5rem; height: 5rem; ">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><strong>Experts Corner</strong></h5>
-                <p class="card-text">
-                  Learn about IIUM experts' profiles.
-                </p>
-              </div>
-            </card>
-          </column>
-          <column class="col-12 col-lg-3 d-flex">
-            <card class="card shadow my-4 pt-3 align-self-stretch">
-              <div class="icon-cluster">
-                <img src="/images/Awards & Achievement - Round Shape.png" alt="" style="width: 5rem; height: 5rem; ">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><strong>Awards and Achievements</strong></h5>
-                <p class="card-text">
-                  Awards and achievements received by IIUM.
-                </p>
-              </div>
-            </card>
-          </column>
-          <column class="col-12 col-lg-3 d-flex">
-            <card class="card shadow my-4 pt-3 align-self-stretch">
-              <div class="icon-cluster">
-                <img src="/images/Knowledge Resource - Round Shape.png" alt="" style="width: 5rem; height: 5rem; ">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><strong>Knowledge Resources</strong></h5>
-                <p class="card-text">
-                  Knowledge resources such as e-book and digital manuscripts collections available at the library and kulliyyah.
-                </p>
-              </div>
-            </card>
-          </column>
-        </row>
-      
-        <row class="row justify-content-center">
-          <column class="col-12 col-lg-3 d-flex">
-            <card class="card shadow my-4 pt-3 align-self-stretch">
-              <div class="icon-cluster">
-                <img src="/images/Articles & Publications - Round Shape.png" alt="" style="width: 5rem; height: 5rem; ">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><strong>Research Output</strong> </h5>
-                <p class="card-text">
-                  Knowledge resources such as e-book and digital manuscripts collections available at the library and kulliyyah.
-                </p>
-              </div>
-            </card>
-          </column>
-          <column class="col-12 col-lg-3 d-flex">
-            <card class="card shadow my-4 pt-3 align-self-stretch">
-              <div class="icon-cluster">
-                <img src="/images/SDG & Flagship - Round Shape.png" alt="" style="width: 5rem; height: 5rem; ">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><strong>SDG & Flagship</strong></h5>
-                <p class="card-text">
-                  Information related to IIUM Sustainable Development Goal (SDG) and Flagship projects.
-                </p>
-              </div>
-            </card>
-          </column>
-          <column class="col-12 col-lg-3 d-flex">
-            <card class="card shadow my-4 pt-3 align-self-stretch">
-              <div class="icon-cluster">
-                <img src="/images/Knowledge Sharing - Round Shape.png" alt="" style="width: 5rem; height: 5rem; ">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><strong>Knowledge Sharing</strong></h5>
-                <p class="card-text">
-                  IUM knowledge sharing activities organized by Centre of Studies and Administrative Offices (CoS/AO).
-                </p>
-              </div>
-            </card>
-          </column>
-          <column class="col-12 col-lg-3 d-flex">
-            <card class="card shadow my-4 pt-3 align-self-stretch">
-              <div class="icon-cluster">
-                <img src="/images/Community Engagement - Round Shape.png" alt="" style="width: 5rem; height: 5rem; ">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><strong>Community Engagement</strong></h5>
-                <p class="card-text">
-                  IUM community engagement programs.
-                </p>
-
-              </div>
-            </card>
-          </column>
-        </row>
-      
-        <row class="row justify-content-center">
-          <column class="col-12 col-lg-3 d-flex">
-            <card class="card shadow my-4 pt-3 align-self-stretch">
-              <div class="icon-cluster">
-                <img src="/images/IIUM History - Round Shape.png" alt="" style="width: 5rem; height: 5rem; ">
-            </div>
-              <div class="card-body">
-                <h5 class="card-title"><strong>IIUM History</strong> </h5>
-                <p class="card-text">
-                  IIUM corporate memories and archives collection.
-                </p>
-
-              </div>
-            </card>
-          </column>
-          <column class="col-12 col-lg-3 d-flex">
-            <card class="card shadow my-4 pt-3 align-self-stretch">
-              <div class="icon-cluster">
-                <img src="/images/Lesson Learnt - Round Shape.png" alt="" style="width: 5rem; height: 5rem; ">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><strong>Leasson Learnt</strong></h5>
-                <p class="card-text">
-                  Lessons learnt and success stories of IIUM community.
-                </p>
-
-              </div>
-            </card>
-          </column>
-        </row>
-      </section> --}}
 
       <section class="container py-5 text-center" id="cluster">
           
@@ -322,7 +184,7 @@
               <div class="card-body">
                 <h5 class="card-title"><strong>Research Output</strong> </h5>
                 <p class="card-text">
-                  Knowledge resources such as e-book and digital manuscripts collections available at the library and kulliyyah.
+                  Research and Scholarly Publications.
                 </p>
                 {{-- <a href="mobile" class="btn btn-primary">Open Mobile</a> --}}
               </div>
@@ -398,7 +260,7 @@
                 <img src="/images/Lesson Learnt (copy).png" alt="" style="width: 5rem;">
               </div>
               <div class="card-body">
-                <h5 class="card-title"><strong>Leasson Learnt</strong></h5>
+                <h5 class="card-title"><strong>Lesson Learnt</strong></h5>
                 <p class="card-text">
                   Lessons learnt and success stories of IIUM community.
                 </p>

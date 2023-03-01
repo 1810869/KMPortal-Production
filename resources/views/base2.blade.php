@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/base2.css">
     @yield('search2-css')
     @yield('contact-us-css')
+    @yield('result2-css')
     
     <!--Script-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
@@ -37,6 +38,8 @@
     </div>
 
     @yield('contact-us')
+    @yield('result2')
+    @yield('dump')
 
     <div id="mySidenav" class="sidenav">
        

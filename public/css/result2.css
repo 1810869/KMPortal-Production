@@ -1,0 +1,158 @@
+#searchBarWrap{ 
+    display: flex;
+    /* justify-content: center; */
+    padding-top: 1rem;
+    padding-bottom: 0;
+  }
+  
+  
+  #searchBar{
+   padding: .2em .2em .2em .5em;
+   width: 100%;
+   height: 40px;
+  }
+  
+  #searchBtn{
+  
+   border-color: grey;
+   background-color: grey;
+   color:white;
+   font-weight:bold;
+   padding-bottom: .2em;
+  
+  }
+
+  .radiobtn{
+    padding: auto;
+    /* text-align: center; */
+    /* left: 10px; */
+    position: absolute;
+    padding-left: 9px;
+  }
+
+  .content p{
+    height: 65px;
+    width: auto;
+    /* padding: 2px; */
+    overflow: hidden;
+    position: relative;
+    /* display: inline-block; */
+    /* margin: 0 5px 0 5px; */
+    text-align: left;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    font-size: 14px;
+    color: #000;
+    font-weight: 300;
+  }
+
+
+    .resultleft-bar{
+      width: 25rem;
+      background: #eee;
+      padding: 4rem 3rem 12rem;
+      flex-shrink: 0;
+      float: left;
+    }
+
+    .resultright-bar{
+      display: flex;
+      position: relative;
+    }
+
+
+  .left-content{
+    top: 3rem;
+    position: sticky;
+  }
+
+  .accordion{
+    padding-top: 1rem;
+  }
+
+  .button-sec{
+    padding-top: 1rem;
+  }
+
+  .btn1{
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .suggested-sec{
+    padding-top: 4.5rem;
+  }
+
+  .keywords{
+    padding-top: 1rem;
+  }
+  .btn2{
+    margin: 0.2rem;
+  }
+
+  .urls-sec{
+    padding-top: 4.5rem
+  }
+
+  .urls{
+    padding-top: 1rem;
+  }
+
+  .urls a{
+    text-decoration: none;
+  }
+
+  .dropdown-item{
+    font-size: 13px;
+  }
+
+  .post-text a{
+     text-decoration: none; 
+     font-weight: 600;
+     font-size: 1.1rem;
+  }
+
+  @media screen and (min-width: 992px){
+    .nested-container{
+      background-color: aquamarine;
+      display: none;
+    }
+
+    /* .left-content{
+      top: 0;
+      position: relative;
+    } */
+
+    .resultright-bar{
+      width: 100%;
+    }
+  }
+
+  .nested-container{
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+}
+
+@media screen and (max-width: 810px) {
+
+  .one{
+    padding-bottom: 3px;
+  }
+
+  .search-tooltip{
+    display: none;
+  }
+
+  .left-content{
+    top: 0;
+    position: relative;
+  }
+
+}
+
+.search-sec{
+  margin-bottom: 3rem;
+}
+

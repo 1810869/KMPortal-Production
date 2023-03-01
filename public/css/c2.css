@@ -1,0 +1,162 @@
+.wrapper { 
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+  }
+  
+
+  .one {
+    background-color: #eee;
+    width: 24rem;
+    padding: 3rem 3rem 12rem;
+    flex-shrink: 0;
+    
+  }
+
+  .two { 
+    background-color: white;
+    overflow:hidden;
+    min-height:1170px;
+    min-width: 1120px;
+    padding: 3rem 3rem 12rem;
+  }
+  
+  @media screen and (max-width: 810px) {
+     .one { 
+      float: none;
+      margin-right:0;
+      width:auto;
+      border:0;  
+      height: auto;
+      padding: 1rem 1rem 0.5rem 1rem;
+    }
+
+    .left-content{
+      top: 0;
+      position: relative;
+    }
+
+    .wrapper{
+      display: block;
+    }
+
+    .accordion-sec{
+      display: none;
+    }
+
+    .button-sec{
+      display: none;
+    }
+
+    #suggested-sec{
+      display: none;
+    }
+
+    #urls-sec{
+      display: none;
+    }
+
+    .two{
+      padding: 3rem 1.5rem;
+      position: relative;
+      width: 100%;
+    }
+
+    .post{
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    .one { 
+     float: none;
+     margin-right:0;
+     width:auto;
+     border:0;  
+     height: auto;
+     padding: 1rem 1rem 0.5rem 1rem;
+   }
+
+   .left-content{
+    top: 0;
+    position: relative;
+  }
+
+   .wrapper{
+     display: block;
+   }
+
+   .accordion-sec{
+     display: none;
+   }
+
+   .button-sec{
+     display: none;
+   }
+
+   #suggested-sec{
+     display: none;
+   }
+
+   #urls-sec{
+     display: none;
+   }
+
+   .two{
+     /* padding: 3rem 1.5rem; */
+     padding: 0.5rem;
+     position: relative;
+     width: 100%;
+   }
+
+   .post{
+     /* flex-direction: column; */
+   }
+ }
+
+  @media screen and (max-width: 820px){
+    .post-thumbnail{
+      min-width: 100%;
+      height: auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .left-content{
+      top: 0;
+      position: relative;
+    }
+  }
+
+  .left-content{
+    top: 3rem;
+    position: sticky;
+  }
+
+  div.accordion-item{
+    padding: 3px 0 3px 0;
+  }
+
+  .post{
+    display: flex;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+
+  .post-text{
+    padding: 0.5rem;
+  }
+  
+  .post-thumbnail{
+    width: 300px;
+    padding: 0.5rem;
+    padding: 0;
+  }
+
+  option{
+    font-size: 10px;
+  }
+
+  .form-select{
+    font-size: 10px;
+  }
