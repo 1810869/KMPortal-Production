@@ -264,8 +264,7 @@
       <div class="navigate" style="display: flex; align-items: center; margin-bottom: 2rem;"><a href="/search2" style="font-size:18px; text-decoration: none; margin-right: 5px; font-size: 16px;"> Home</a> / Result </div>
       <div class="resNum"><p style="color: black;">Result(s) found: <b style="font-size: 25px;"> {{ $resultset->getNumFound() }} </b> for <b style="font-size: 25px;"> {{ $input }} </b> </p></div>
 
-      <ul style="list-style-type: none; padding: 0;">
-
+      {{-- <ul style="list-style-type: none; padding: 0;">
 
       @foreach ($resultset as $document) 
 
@@ -279,14 +278,49 @@
           <p> {{ $document->Abstract[0] }} </p>
           </div>
           </div>
-          </li>
-
-      
+          </li>      
 
       </ul>
 
-      @endforeach
+      @endforeach --}}
 
+      @if (count($resultset) > 0)
+
+      <ul>
+        @foreach ($resultset as $document) 
+        <li class="post" style="border-radius:0%;text-overflow: ellipsis; overflow: hidden;">
+            <a href=""><picture><source srcset="" media=(max-width: 768px)><img src="images/uia background.jpg" class="post-thumbnail" alt=""></picture></a>
+            <div class="post-text">
+                <a href="{{ $document->URL[0] }}">
+                    <?php
+                        // Highlight the search keywords in the title
+                        $title = preg_replace("/\b(" . implode('|', array_map('preg_quote', $keywords)) . ")\b/i", '<mark>$0</mark>', $document->Title);
+                        echo $title;
+                    ?>
+                </a>
+                <span class="badge bg-secondary rounded-0">New</span>
+                <br><span style="font-size: 12px;">Articles & Publication</span><span style="font-size: 12px;"> | Library</span>
+                <p style="margin-top: 1rem;">{{ $document->URL[0] }} </p>
+                <div class="content text-justify">
+                    <p>
+                        <?php
+                            // Highlight the search keywords in the abstract
+                            $abstract = preg_replace("/\b(" . implode('|', array_map('preg_quote', $keywords)) . ")\b/i", '<mark>$0</mark>', $document->Abstract[0]);
+                            echo $abstract;
+                        ?>
+                    </p>
+                </div>
+            </div>
+        </li>
+    @endforeach
+
+      </ul>
+
+      @else
+
+      <p>No results found</p>
+
+      @endif
 
     </div>
     </div>
@@ -305,5 +339,17 @@
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();   
 });
+</script>
+
+<script>
+    $(function() {
+        // Highlight the search keywords in the search results
+        var keywords = @json($keywords);
+        var query = new RegExp("\\b(" + keywords.join("|") + ")\\b", "gi");
+        $('mark').each(function() {
+            var text = $(this).text();
+            $(this).html(text.replace(query, '<strong>$&</strong>'));
+        });
+    });
 </script>
 @stop

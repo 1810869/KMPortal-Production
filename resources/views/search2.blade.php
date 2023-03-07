@@ -84,11 +84,19 @@
                 <p style="color: white;">databases and repositories available at IIUM</p>
             </div>
         </div>
-      <form method="post" action="{{url('result')}}">
+      {{-- <form method="post" action="{{url('result')}}">
           {{csrf_field()}}
         <div id="searchBarWrap">
             <input id="searchBar" type="text" name="keyword" placeholder="Enter a keyword to get started"/>
             <button type="submit" class="btn" id="searchBtn" style="height: 40px;"><i class="fa fa-search"></i></button>
+        </div>
+      </form> --}}
+
+      <form method="post" action="{{ url('result') }}" onsubmit="return validateForm()">
+        {{ csrf_field() }}
+        <div id="searchBarWrap">
+          <input id="searchBar" type="text" name="keyword" placeholder="Enter a keyword to get started" />
+          <button type="submit" class="btn" id="searchBtn" style="height: 40px;"><i class="fa fa-search"></i></button>
         </div>
       </form>
 
@@ -298,5 +306,14 @@
       document.documentElement.scrollTop = 0;
     }
     </script>
+
+  <script>
+    function validateForm() {
+      var keyword = document.getElementById("searchBar").value.trim();
+      if (keyword == "") {
+        return false;
+      }
+     }
+  </script>
 
 @stop

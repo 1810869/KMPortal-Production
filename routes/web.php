@@ -41,8 +41,8 @@ Route::get('/contact', function () {
 // });
 
 Route::get('/ping', [SolariumController::class, 'ping']);
-// Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('send.email');
-// Route::post('/result', [SolariumController::class, 'search']);
+Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('send.email');
+Route::post('/result', [SolariumController::class, 'search']);
 //Fallback
 Route::fallback(function(){
 

@@ -26,16 +26,37 @@ class SolariumController extends Controller
         }
     }
 
+    // public function search(Request $request)
+    // {
+    //     $input = $request->input('keyword');
+    //     $query = $this->client->createSelect();
+    //     $query->setQuery('Abstract:"' . $input . '"');
+    //     $query->setStart(0);
+    //     $query->setRows(10);
+    //     $resultset = $this->client->select($query);
+
+    //     return view('result2', compact('resultset', 'input'));
+
+    // }
+
     public function search(Request $request)
-    {
-        $input = $request->input('keyword');
-        $query = $this->client->createSelect();
-        $query->setQuery('Abstract:"' . $input . '"');
-        $query->setStart(0);
-        $query->setRows(100);
-        $resultset = $this->client->select($query);
+{
+    $input = $request->input('keyword');
+    $query = $this->client->createSelect();
+    $query->setStart(0);
+    $query->setRows(10);
 
-        return view('result2', compact('resultset', 'input'));
+    // Split the input string into individual keywords
+    $keywords = explode(' ', $input);
 
-    }
+    // Build a query string that searches for each individual keyword
+    $queryString = implode(' AND ', array_map(function ($keyword) {
+        return "Abstract:$keyword";
+    }, $keywords));
+
+    $query->setQuery($queryString);
+    $resultset = $this->client->select($query);
+
+    return view('result2', compact('resultset', 'input', 'keywords'));
+}
 }

@@ -27,7 +27,7 @@
                 <a href="https://www.iium.edu.my/v2/"><img src="/images/logo 40th.png" alt="" id="vid"></a>
             </div>
             <div class="soc-med d-flex flex-row-reverse">
-                <div class="contact-us"><a  href="/contact"><p>Contact Us</p></a></div>
+                <div class="contact-us"><a  href="/contact" style="text-decoration: none;"><p>Contact Us</p></a></div>
                 <div class="quote-png"><a href="" style="padding: 0;"><img src="/images/connectivity.png" alt=""></a></div>
                 <div class="sidemenu-btn"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span></div>
              </div>
