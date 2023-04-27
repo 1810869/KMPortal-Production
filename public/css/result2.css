@@ -159,3 +159,12 @@
 ul{
   padding-left: 0.5px;
 }
+
+.accordion-button{{
+
+  --bs-accordion-btn-focus-border-color: none !important;
+  --bs-accordion-btn-focus-box-shadow: none !important;
+  --bs-accordion-active-color: none !important;
+  --bs-accordion-active-bg: none !important;
+}
+

@@ -1,7 +1,8 @@
 .wrapper { 
-    max-width: 1500px;
+    max-width: 1450px;
     margin: 0 auto;
     display: flex;
+    justify-content: center;
   }
   
 
@@ -17,7 +18,7 @@
     background-color: white;
     overflow:hidden;
     min-height:1170px;
-    min-width: 1120px;
+    min-width: 75%;
     padding: 3rem 3rem 12rem;
   }
   
@@ -164,3 +165,25 @@
   ul{
     padding-left: 0.5px;
   }
+
+.img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+ }
+
+  .img-container img {
+    max-width: fit-content;
+    max-height: 160px;
+  }
+
+
+.accordion-button{
+
+  --bs-accordion-btn-focus-border-color: none !important;
+  --bs-accordion-btn-focus-box-shadow: none !important;
+  --bs-accordion-active-color: none !important;
+  --bs-accordion-active-bg: none !important;
+
+}

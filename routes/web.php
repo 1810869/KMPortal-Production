@@ -40,13 +40,17 @@ Route::get('/contact', function () {
 //     return view('datadump');
 // });
 
+route::get('/dump', [SolariumController::class, 'sorting']);
+
 Route::get('/ping', [SolariumController::class, 'ping']);
 Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('send.email');
 Route::post('/result', [SolariumController::class, 'search']);
+Route::get('/result', [SolariumController::class, 'search'])->name('result');
+//Route::get('/result', [SolariumController::class, 'search'])->name('search');
 //Fallback
 Route::fallback(function(){
 
-    return view('search2');
+    return redirect('/search');
 });
 
 

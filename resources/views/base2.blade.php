@@ -64,8 +64,6 @@
     </footer>
 
     <script>
-
-
         function openNav() {
           document.getElementById("mySidenav").style.width = "300px";
         }
@@ -75,11 +73,13 @@
         }
 
         $('body').on('click', function(){
-  if( parseInt( $('#mySidenav').css('width') ) > 0 ){
-    closeNav();
-  }
-});
-        </script>
+ 	 if( parseInt( $('#mySidenav').css('width') ) > 0 ){
+   	 closeNav();
+ 	 }
+	});
+     </script>
+
+     @yield('search-script')
     
 </body>
 </html>

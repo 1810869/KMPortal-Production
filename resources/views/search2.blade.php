@@ -90,6 +90,9 @@
             <input id="searchBar" type="text" name="keyword" placeholder="Enter a keyword to get started"/>
             <button type="submit" class="btn" id="searchBtn" style="height: 40px;"><i class="fa fa-search"></i></button>
         </div>
+
+
+
       </form> --}}
 
       <form method="post" action="{{ url('result') }}" onsubmit="return validateForm()">
@@ -110,16 +113,17 @@
             <a href="#cluster" class="cluster-img"><img src="/images/down.png" alt="down arrow" class="vert-move"></a>
        </div>
 
-       {{-- <marquee width="100%" direction="right" height="30px" style="background-color:yellow; color:red; z-index:-3; "> 
+      {{-- <marquee width="100%" direction="right" height="30px" style="background-color:yellow; color:red; z-index:-3; "> 
         This website is still under development, it does not represent the final product.
-        </marquee> --}}
+        </marquee>--}}
 
        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
       <section class="container py-5 text-center" id="cluster">
           
-        <row class="row justify-content-center">
-          <column class="col-12 col-lg-3 d-flex">
+        <row class="row">
+          <column class="col-12 col-lg-3 d-flex justify-content-center">
+            <a href="http://10.101.243.159/result?Category=IIUM+Rules+%26+Policies" style="color: black; text-decoration: none; justify-content: center;" >
             <card class="card shadow my-4 pt-3 align-self-stretch">
               <div class="icon-cluster">
                 {{-- <img src="/images/IIUM Policies & Standard - Round Shape.png" alt="" style="width: 5rem; height: 5rem; "> --}}
@@ -134,8 +138,10 @@
                 {{-- <a href="mobile" class="btn btn-primary">Open Mobile</a> --}}
               </div>
             </card>
+          </a>
           </column>
-          <column class="col-12 col-lg-3 d-flex">
+          <column class="col-12 col-lg-3 d-flex justify-content-center">
+          <a href="http://10.101.243.159/result?Category=Experts+Corner" style="color: black;text-decoration: none; justify-content: center;" >
             <card class="card shadow my-4 pt-3 align-self-stretch">
               <div class="icon-cluster">
                 {{-- <img src="/images/Expert Corner - Round Shape.png" alt="" style="width: 7rem; height: 7rem; "> --}}
@@ -149,8 +155,10 @@
                 {{-- <a href="monitor" class="btn btn-primary">Open Monitor</a> --}}
               </div>
             </card>
+          </a>
           </column>
-          <column class="col-12 col-lg-3 d-flex">
+          <column class="col-12 col-lg-3 d-flex justify-content-center">
+          <a href="http://10.101.243.159/result?Category=Awards+and+Achievements" style="color: black;text-decoration: none; justify-content: center;" >
             <card class="card shadow my-4 pt-3 align-self-stretch">
               <div class="icon-cluster">
                 {{-- <img src="/images/Awards & Achievement - Round Shape.png" alt="" style="width: 5rem; height: 5rem; "> --}}
@@ -164,8 +172,10 @@
                 {{-- <a href="predictor" class="btn btn-primary">Open Predictor</a> --}}
               </div>
             </card>
+          </a>
           </column>
-          <column class="col-12 col-lg-3 d-flex">
+          <column class="col-12 col-lg-3 d-flex justify-content-center">
+          <a href="http://10.101.243.159/result?Category=Knowledge+Resources" style="color: black; text-decoration: none; justify-content: center;" >
             <card class="card shadow my-4 pt-3 align-self-stretch">
               <div class="icon-cluster">
                 {{-- <img src="/images/Knowledge Resource - Round Shape.png" alt="" style="width: 5rem; height: 5rem; "> --}}
@@ -174,16 +184,18 @@
               <div class="card-body">
                 <h5 class="card-title"><strong>Knowledge Resources</strong></h5>
                 <p class="card-text">
-                  Knowledge resources such as e-book and digital manuscripts collections available at the library and kulliyyah.
+                  Knowledge resources that are available at the IIUM
                 </p>
                 {{-- <a href="simulator" class="btn btn-primary">Open Simulator</a> --}}
               </div>
             </card>
+          </a>
           </column>
         </row>
       
         <row class="row justify-content-center">
-          <column class="col-12 col-lg-3 d-flex">
+          <column class="col-12 col-lg-3 d-flex justify-content-center">
+          <a href="http://10.101.243.159/result?Category=Research+Output" style="color: black; text-decoration: none; justify-content: center;" >
             <card class="card shadow my-4 pt-3 align-self-stretch">
               <div class="icon-cluster">
                 {{-- <img src="/images/Articles & Publications - Round Shape.png" alt="" style="width: 5rem; height: 5rem; "> --}}
@@ -197,8 +209,10 @@
                 {{-- <a href="mobile" class="btn btn-primary">Open Mobile</a> --}}
               </div>
             </card>
+          </a>
           </column>
-          <column class="col-12 col-lg-3 d-flex">
+          <column class="col-12 col-lg-3 d-flex justify-content-center">
+           <a href="http://10.101.243.159/result?Category=SDG+%26+Flagships" style="color: black; text-decoration: none; justify-content: center;" >
             <card class="card shadow my-4 pt-3 align-self-stretch">
               <div class="icon-cluster">
                 {{-- <img src="/images/SDG & Flagship - Round Shape.png" alt="" style="width: 5rem; height: 5rem; "> --}}
@@ -212,8 +226,10 @@
                 {{-- <a href="monitor" class="btn btn-primary">Open Monitor</a> --}}
               </div>
             </card>
+          </a>
           </column>
-          <column class="col-12 col-lg-3 d-flex">
+          <column class="col-12 col-lg-3 d-flex justify-content-center">
+           <a href="http://10.101.243.159/result?Category=Knowledge+Sharing" style="color: black; text-decoration: none; justify-content: center;" >
             <card class="card shadow my-4 pt-3 align-self-stretch">
               <div class="icon-cluster">
                 {{-- <img src="/images/Knowledge Sharing - Round Shape.png" alt="" style="width: 5rem; height: 5rem; "> --}}
@@ -222,13 +238,15 @@
               <div class="card-body">
                 <h5 class="card-title"><strong>Knowledge Sharing</strong></h5>
                 <p class="card-text">
-                  IIUM knowledge sharing activities organized by Centre of Studies and Administrative Offices (CoS/AO).
+                  IIUM knowledge sharing activities organized by KCDIOM at IIUM
                 </p>
                 {{-- <a href="predictor" class="btn btn-primary">Open Predictor</a> --}}
               </div>
             </card>
+          </a>
           </column>
-          <column class="col-12 col-lg-3 d-flex">
+          <column class="col-12 col-lg-3 d-flex justify-content-center">
+          <a href="http://10.101.243.159/result?Category=Community+Engagement" style="color: black; text-decoration: none; justify-content: center;" >
             <card class="card shadow my-4 pt-3 align-self-stretch">
               <div class="icon-cluster">
                 {{-- <img src="/images/Community Engagement - Round Shape.png" alt="" style="width: 5rem; height: 5rem; "> --}}
@@ -242,11 +260,13 @@
                 {{-- <a href="simulator" class="btn btn-primary">Open Simulator</a> --}}
               </div>
             </card>
+          </a>
           </column>
         </row>
       
         <row class="row justify-content-center">
-          <column class="col-12 col-lg-3 d-flex">
+          <column class="col-12 col-lg-3 d-flex justify-content-center">
+          <a href="http://10.101.243.159/Category=IIUM+History" style="color: black; text-decoration: none; justify-content: center;" >
             <card class="card shadow my-4 pt-3 align-self-stretch">
               <div class="icon-cluster">
                 {{-- <img src="/images/IIUM History - Round Shape.png" alt="" style="width: 5rem; height: 5rem; "> --}}
@@ -260,8 +280,10 @@
                 {{-- <a href="mobile" class="btn btn-primary">Open Mobile</a> --}}
               </div>
             </card>
+          </a>
           </column>
-          <column class="col-12 col-lg-3 d-flex">
+          <column class="col-12 col-lg-3 d-flex justify-content-center">
+          <a href="http://10.101.243.159/result?Category=Lesson+Learnt" style="color: black; text-decoration: none; justify-content: center;" >
             <card class="card shadow my-4 pt-3 align-self-stretch">
               <div class="icon-cluster">
                 {{-- <img src="/images/Lesson Learnt - Round Shape.png" alt="" style="width: 5rem; height: 5rem; "> --}}
@@ -275,11 +297,12 @@
                 {{-- <a href="monitor" class="btn btn-primary">Open Monitor</a> --}}
               </div>
             </card>
+          </a>
           </column>
         </row>
       </section>
 
-      
+<script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
     </body>
 
 

@@ -1,4 +1,4 @@
-@extends('base2')
+ @extends('base2')
 
 @section('contact-us-css')
 
@@ -20,36 +20,27 @@
         
         <form action="{{ route('send.email') }}" method="POST">
             @csrf
-            
-            
                 <div class="top-form d-flex">
-                    <div class="form-group-1">    
+                    <div class="form-group-1">
                         {{-- <label for="name">Your Name </label> --}}
-                        <input type="text" name="name" id="form-control" placeholder="Enter your name" class="form-control">
+                        <input type="text" name="name" id="form-control" placeholder="Enter your name" class="form-control" value="{{ old('name') }}" required>
                     </div>
-                    <div class="form-group-1">       
+                    <div class="form-group-1">
                         {{-- <label for="email">Your email </label> --}}
-                        <input type="email" name="email" id="form-control" placeholder="Enter your email" class="form-control">
-                    </div>    
+                        <input type="email" name="email" id="form-control" placeholder="Enter your email" class="form-control" value="{{ old('email') }}" required>
+                    </div>
                 </div>
                      <div class="form-group-2">
                         {{-- <label for="message">Your Message:</label> --}}
-                        <textarea name="message"  cols="15" rows="5" class="form-control" placeholder="Write your message"></textarea>
+                        <textarea name="message"  cols="15" rows="5" class="form-control" placeholder="Write your message">{{ old('message') }}</textarea>
                      </div>
                  <div class="d-flex">
-
-                    <input type="submit" value="Send Message" class="btn btn-primary">
-                    <a href="/search2"><input class="btn btn-success" value="Cancel"></a>
-
-                 </div>    
-                
-
+                    <button type="submit" value="Send Message" class="btn btn-primary">Send Message</button>
+                    <!--<a href="/search2" style="text-decoration: none; color: white;" ><button type="button"  class="btn btn-success" value="Cancel">Return Home</a>-->
+                    <a href="{{ url('/search2') }}" class="btn btn-success" value="Cancel" style="text-decoration: none; color: white;">Return to Home</a>
+                 </div>
             </div>
-
-           
-        </form>   
-        
-        
+        </form>
     </div>
 
 @stop

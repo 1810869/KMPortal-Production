@@ -2,23 +2,29 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactFormMail;
 
 class ContactController extends Controller
 {
-    public function sendEmail(Request $req){
+    public function sendEmail(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'message' => 'required',
+        ]);
 
-        $data=[
-            'name'=>$req->name,
-            'email'=>$req->email,
-            'message'=>$req->message
+        $details = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'message' => $request->message,
         ];
 
-        // dd($data);
+        Mail::to('dummyportal2023@gmail.com')->send(new ContactFormMail($details));
 
-        Mail::to('wan.hafizam5949@gmail.com')->send(new ContactMail($data));
-        return "Thanks for reaching out! <br> <a href='/search2'>Go back</a> ";
+        return redirect('/success')->with('success', 'Email sent successfully!');
     }
 }
+

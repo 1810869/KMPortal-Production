@@ -45,6 +45,17 @@ return [
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
 
+    'hogmail' => [
+        'transport' => 'smtp',
+        'host' => 'smtp.live.com',
+        'port' => 587,
+        'encryption' => 'tls',
+        'username' => 'dummyportal2023@gmail.com',
+        'password' => 'Dummy_123',
+        'timeout' => null,
+        'auth_mode' => null,
+    ],
+
         'ses' => [
             'transport' => 'ses',
         ],

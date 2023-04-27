@@ -18,7 +18,8 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: relative;
+    height: -webkit-fill-available; 
     top:0;
     bottom: 0;
     left: 0;
